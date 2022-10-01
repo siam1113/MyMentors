@@ -1,0 +1,23 @@
+div#container {
+  padding: 1rem;
+  overflow: hidden;
+  height: 695px;
+  border: 10px solid white;
+}
+div#navbar {
+  height: 80px;
+  width: 96%;
+  position: absolute;
+  bottom: 0;
+}
+ul#nav-items {
+  display: flex;
+  list-style: none;
+  place-content: space-around;
+  width: 80%;
+  margin: 0;
+}
+div#display {
+  height: 580px;
+  overflow: scroll;
+}

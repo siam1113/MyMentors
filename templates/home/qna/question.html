@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block display %}
+{% load static %}
+<div id="question-answer">
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">{{qs.question}}</h1>
+                <p class="lead text-muted">{{qs.description}}</p>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        {% for ans in answers %}
+        <div class="col w-100 d-block m-auto p-3">
+            <div class="card px-3 d-block m-auto w-100">
+                <div class="row align-items-between w-100">
+                    <div class="col-md-2 w-25">
+                        <img class="pt-4" src="{% static 'icons/question.svg' %}" alt="question icon" width="120px"
+                            height="120px">
+                    </div>
+                    <div class="d-flex col-md-8 w-75">
+                        <div class="card-body ms-3 w-75">
+                            <p class="card-text">{{ans.answer | slice:":250"}}...</p>
+                            <b>Answered By {{ans.name}}</b>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </main>
+</div>
+{% endblock %}

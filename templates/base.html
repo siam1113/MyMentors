@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'styles/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/home.css' %}">
+</head>
+
+<body>
+
+    <div id="container">
+        <div class="px-2 py-3 mb-3" id="navbar">
+            <div class="d-flex flex-wrap align-items-center justify-content-center">
+                <ul id="nav-items">
+                    <li>
+                        <a href="{% url 'dashboard' %}" class="nav-link text-white">
+                            <img class="d-block m-auto" src="{% static 'icons/settings.svg' %}" alt="home icon"
+                                height="25px" width="25px">
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'notifications' %}" class="nav-link text-white">
+                            <img class="d-block m-auto" src="{% static 'icons/notification.svg' %}" alt="home icon"
+                                height="25px" width="25px">
+                            Notifications
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/" class="nav-link text-white">
+                            <img class="d-block m-auto" src="{% static 'icons/home.svg' %}" alt="home icon"
+                                height="25px" width="25px">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'mentors' %}" class="nav-link text-white">
+                            <img class="d-block m-auto" src="{% static 'icons/mentor.svg' %}" alt="home icon"
+                                height="25px" width="25px">
+                            Mentors
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'ask' %}" class="nav-link text-white">
+                            <img class="d-block m-auto" src="{% static 'icons/ask.svg' %}" alt="home icon" height="25px"
+                                width="25px">
+                            Ask
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="display">
+            {% block display %}
+
+            {% endblock %}
+        </div>
+    </div>
+    {% block js %}
+
+    {% endblock %}
+    <script>
+        body = document.getElementsByTagName("body")[0];
+        settedTheme = localStorage.getItem("mymentortheme");
+        console.log(settedTheme);
+        body.setAttribute("class", `bg-${settedTheme}`);
+    </script>
+</body>
+
+</html>

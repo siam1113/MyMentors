@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block display %}
+<div id="notifications">
+    {% for post in posts %}
+    <div class="d-flex justify-content-between alert alert-dark alert-dismissible fade show">
+        <div>
+            A Post about <a href="#" class="alert-link"><i>{{post.title}}</i></a> Posted by <b>{{post.author}}</b>
+        </div>
+        <p>3 hours ago</p>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

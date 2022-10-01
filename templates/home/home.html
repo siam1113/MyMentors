@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block display %}
+<div class="col px-5 py-5">
+    <div class="col" id="blog">
+        <div class="card pe-5 me-5 pb-5 mb-5">
+            <div class="card-body">
+                <h5 class="card-title">Blog</h5>
+                <p class="card-text pb-3">Here you will find articles from your mentors
+                </p>
+                <a href="{% url 'blog' %}" class="btn btn-dark">Go to Blog</a>
+            </div>
+        </div>
+    </div>
+    <div class="col m-0" id="qna">
+        <div class="card pe-5 me-5 pb-5">
+            <div class="card-body">
+                <h5 class="card-title">Q & A</h5>
+                <p class="card-text pb-3">This is the Questios and Answer Section where you will find answers
+                    from
+                    various mentor
+                </p>
+                <a href="qna" class="btn btn-dark">Go Q & A</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

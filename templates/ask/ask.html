@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block display %}
+<main class="form-signin">
+    <h2 class="text-center">Ask Your Question</h2>
+    <form class="d-grid px-3 py-2" action="{% url 'asksave' %}" method="post">
+        {% csrf_token %}
+        <label class="py-2 mt-1 fw-bold">Question Id</label>
+        {{form.qid}}
+        <input type="number" style="visibility: hidden;" value="{{length}}" id="tempqid" />
+        <label class="py-2 mt-1 fw-bold">{{form.question.label}}</label>
+        {{form.question}}
+        <label class="py-2 mt-1 fw-bold">{{form.description.label}}</label>
+        {{form.description}}
+        <button class="w-25 m-auto d-block mt-3 btn btn-outline-dark" type="submit">Submit</button>
+    </form>
+</main>
+{% endblock %}
+{% block js %}
+<script>
+    qid = document.getElementById("id_qid");
+    tempqid = document.getElementById("tempqid");
+    qid.value = tempqid.value;
+</script>
+{% endblock %}
