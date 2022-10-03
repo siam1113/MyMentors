@@ -35,7 +35,7 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
       - name: Upload static site content
-        uses: actions/upload_artifact@v3
+        uses: actions/upload-artifact@v3
         with:
           name: artifact
           path: static/
